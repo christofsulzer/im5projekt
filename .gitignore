@@ -1,0 +1,6 @@
+.vscode
+.info
+.DS_Store
+.Trashes
+*.zip
+config.php

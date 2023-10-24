@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-// Externe Datenbankkonfiguration einbinden
+// Externe Datenbankkonfiguration einbinden 
 require 'config.php';
 
 try {
@@ -15,6 +15,13 @@ try {
 
     // Daten als assoziatives Array abrufen
     $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Überprüfen, ob card_image einen Wert hat, und gegebenenfalls anpassen
+    foreach ($posts as &$post) {
+        if (empty($post['card_image'])) {
+            $post['card_image'] = null;
+        }
+    }
 
     // Daten im JSON-Format zurückgeben
     echo json_encode($posts);

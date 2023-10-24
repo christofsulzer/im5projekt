@@ -6,6 +6,8 @@ function loadPosts() {
             postsDiv.innerHTML = ''; // Clear previous posts
 
             data.forEach(post => {
+                let imageHtml = post.card_image ? `<img src="${post.card_image}" alt="${post.card_title}">` : '';
+
                 postsDiv.innerHTML += `
                 <div class="post">
                     <strong>${post.display_name} (@${post.username})</strong>
@@ -14,13 +16,37 @@ function loadPosts() {
                     <div class="card">
                         <h3><a href="${post.card_url}" target="_blank">${post.card_title}</a></h3>
                         <p>${post.card_description}</p>
-                        <img src="${post.card_image}" alt="${post.card_title}">
+                        ${imageHtml}
                     </div>
                 </div>`;
             });
         });
 }
 
+
+document.getElementById("keywordForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    let formData = new FormData(this);
+
+    fetch('php/fetchMastodon.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        let messageElement = document.getElementById("message");
+        if (data.status === "error") {
+            messageElement.style.color = "red";
+        } else {
+            messageElement.style.color = "green";
+        }
+        messageElement.textContent = data.message;
+    })
+    .catch(error => console.error('Error:', error));
+});
+
 document.addEventListener('DOMContentLoaded', (event) => {
     loadPosts();
 });
+

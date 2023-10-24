@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mastodon Posts</title>
+    <title>Mastodon Posts Fetcher</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <form action="php/fetchMastodon.php" method="post">
-        <input type="text" name="keyword" placeholder="Keyword eingeben" required>
+
+<div class="container">
+    <form id="keywordForm">
+        <label for="keyword">Keyword/Hashtag:</label>
+        <input type="text" id="keyword" name="keyword" required>
         <button type="submit">Suchen</button>
+        <span id="message"></span> <!-- Dies ist das neue Element, um Nachrichten anzuzeigen -->
     </form>
 
-    <div class="container">
-        <div id="posts">
-            <!-- Hier werden die Posts dynamisch geladen -->
-        </div>
-    </div>
+    <div id="posts"></div>
+</div>
 
-    <script src="js/script.js"></script>
 </body>
 </html>
