@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastodon Posts</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <form action="php/fetchMastodon.php" method="post">
+        <input type="text" name="keyword" placeholder="Keyword eingeben" required>
+        <button type="submit">Suchen</button>
+    </form>
+
+    <div class="container">
+        <div id="posts">
+            <!-- Hier werden die Posts dynamisch geladen -->
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
