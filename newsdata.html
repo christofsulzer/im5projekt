@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of the webpage -->
+    <title>Newsdata Artikel Suchen</title>
+
+    <!-- Link to the external CSS stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon for the website -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+
+    <!-- External JavaScript file, set to load after the page is parsed -->
+    <script src="js/scriptNewsData.js" defer></script>
+</head>
+<body>
+
+<!-- Main container for the search form and news display -->
+<div class="container">
+    <!-- Search form -->
+    <form id="searchForm">
+        <!-- Input field for search terms with a placeholder -->
+        <label for="searchTerm"></label>
+        <input type="text" id="searchTerm" name="searchTerm" placeholder="Search for news by entering a keyword or sentence" required>
+
+        <!-- Submit button for the form -->
+        <button type="submit">Find</button>
+
+        <!-- Span for displaying messages to the user -->
+        <span id="message"></span>
+    </form>
+
+    <!-- Pagination controls (before the news display) -->
+    <div id="pagination"></div>
+
+    <!-- Container to display fetched news articles -->
+    <div id="newsContainer"></div>
+
+    <!-- Pagination controls (after the news display) -->
+    <div id="pagination"></div>
+</div>
+
+</body>
+</html>

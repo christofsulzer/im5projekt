@@ -1,33 +1,34 @@
 <?php
+// Set the content type to JSON for the response
 header('Content-Type: application/json');
 
-// Externe Datenbankkonfiguration einbinden 
+// Include external database configuration
 require 'config.php';
 
 try {
-    // Verbindung zur Datenbank herstellen
+    // Establish a connection to the database
     $pdo = new PDO($dsn, $user, $pass, $options);
 
-    // SQL-Abfrage, um alle Posts in absteigender Reihenfolge nach 'created_at' zu holen
+    // SQL query to fetch all posts in descending order by 'created_at'
     $sql = "SELECT * FROM mastodon_posts ORDER BY created_at DESC";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
-    // Daten als assoziatives Array abrufen
+    // Fetch the data as an associative array
     $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Überprüfen, ob card_image einen Wert hat, und gegebenenfalls anpassen
+    // Check if 'card_image' has a value and adjust if necessary
     foreach ($posts as &$post) {
         if (empty($post['card_image'])) {
             $post['card_image'] = null;
         }
     }
 
-    // Daten im JSON-Format zurückgeben
+    // Return the data in JSON format
     echo json_encode($posts);
 
 } catch (\PDOException $e) {
-    // Fehlermeldung zurückgeben, wenn es Probleme beim Abrufen der Daten gibt
+    // Return an error message if there are problems retrieving the data
     echo json_encode(['error' => 'Daten konnten nicht abgerufen werden: ' . $e->getMessage()]);
 }
 ?>

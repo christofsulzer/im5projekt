@@ -1,5 +1,5 @@
 function loadPosts() {
-    fetch('php/getPosts.php')
+    fetch('php/getMastodonPosts.php')
         .then(response => response.json())
         .then(data => {
             const postsDiv = document.getElementById('posts');
@@ -29,7 +29,7 @@ document.getElementById("keywordForm").addEventListener("submit", function(event
 
     let formData = new FormData(this);
 
-    fetch('php/fetchMastodon.php', {
+    fetch('php/fetchMastodonPosts.php', {
         method: 'POST',
         body: formData
     })

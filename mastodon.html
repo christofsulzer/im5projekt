@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Character set and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of the webpage -->
+    <title>Mastodon Posts Fetcher</title>
+
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon for the website -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+
+    <!-- External JavaScript file for Mastodon functionality, set to load after HTML parsing -->
+    <script src="js/scriptMastodon.js" defer></script>
+</head>
+<body>
+
+<!-- Main container for the form and posts display -->
+<div class="container">
+    <!-- Form for keyword/hashtag input -->
+    <form id="keywordForm">
+        <!-- Label and input field for keyword/hashtag -->
+        <label for="keyword">Keyword/Hashtag:</label>
+        <input type="text" id="keyword" name="keyword" required>
+
+        <!-- Submit button for the form -->
+        <button type="submit">Suchen</button>
+
+        <!-- Span for displaying messages to the user (e.g., errors, status updates) -->
+        <span id="message"></span> <!-- This is a new element to display messages -->
+    </form>
+
+    <!-- Container to display fetched posts -->
+    <div id="posts"></div>
+</div>
+
+</body>
+</html>

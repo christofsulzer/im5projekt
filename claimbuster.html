@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the webpage -->
+    <title>Claimbuster API Anfrage</title>
+</head>
+<body>
+
+<!-- Form for user input, prevents default form submission behavior -->
+<form onsubmit="event.preventDefault(); fetchData();">
+    <!-- Label and input field for the user's claim -->
+    <label for="inputClaim">Geben Sie Ihren Anspruch ein:</label>
+    <input type="text" id="inputClaim" name="inputClaim">
+    
+    <!-- Submit button for the form -->
+    <input type="submit" value="Absenden">
+</form>
+
+<!-- Script to handle API request -->
+<script>
+    // Asynchronous function to fetch data from the API
+    async function fetchData() {
+        // API key and user input
+        let api_key = '144a0d3e44a5422fbeae269343d760d3';
+        let input_claim = document.getElementById('inputClaim').value;
+        // Base URL for the API (user should insert their specific endpoint)
+        let url = 'https://idir.uta.edu/claimbuster/api/v2/score/text/';
+
+        // Attempt to send a POST request to the API
+        try {
+            // Fetch request with method, headers, and body
+            let response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'x-api-key': api_key,
+                },
+                body: JSON.stringify({'input_text': input_claim}, null, 2)
+            });
+
+            // Parsing the JSON response from the API
+            let responseData = await response.json();
+            // Logging the response to the console
+            console.log(JSON.stringify(responseData, null, 2));
+        } catch (error) {
+            // Error handling
+            console.error("Ein Fehler ist aufgetreten:", error);
+        }
+    }
+</script>
+
+</body>
+</html>
