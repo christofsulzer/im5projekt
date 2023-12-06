@@ -1,4 +1,4 @@
-// Initial setup for current page, articles per page, and total articles
+// Initial setup for current page, articles per page, and total no. of articles
 let currentPage = 1;
 const articlesPerPage = 20;
 let totalArticles = 0;
@@ -98,13 +98,14 @@ document.getElementById("searchForm").addEventListener("submit", function (event
     let submitButton = this.querySelector('button[type="submit"]');
     submitButton.textContent = 'Searching...'; // Change button text to 'Searching...'
 
-    fetch('php/fetchNewsdata.php', {
+    fetch('php/fetchNewsData.php', {
             method: 'POST',
             body: formData
         })
         .then(response => response.json())
         .then(data => {
             let messageElement = document.getElementById("message");
+            console.log('Status:', data.status);
             if (data.status === "error") {
                 messageElement.style.color = "red";
             } else {

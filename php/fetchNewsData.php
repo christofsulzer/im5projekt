@@ -1,5 +1,5 @@
 <?php
-// Include the configuration file
+// Include the config file
 require 'config.php';
 
 // Encode the search term received from the POST request for URL usage
