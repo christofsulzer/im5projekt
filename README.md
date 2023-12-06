@@ -7,7 +7,7 @@ Die finale Version arbeitet mit Texten von Newsdata.io. Diese Plattform bietet e
 
 Funktionen von newsdata.html:
 - Beim Aufrufen werden alle in der DB abgelegten News-Artikel gezeigt
-- Die Langtexte werden abgekürzt angezeigt, der komplette NAchirchtentext ist mit "show more" anzeigbar 
+- Die Langtexte werden abgekürzt angezeigt, der komplette Nachrichtentext ist mit "show more" anzeigbar 
 - Möglichkeit, mit den Buttons Next/Previous durch die Einträge zu paginieren
 - Möglichkeit, mittels Eingabe eines Suchbegriffs nach Artikeln auf Newsdata zu suchen, diese werden in der DB abgelegt und oben an der Liste angezeigt
 - Möglichkeit, für jeden Text einzeln eine Sentimentsanalyse ausführen zu lassen
