@@ -17,6 +17,8 @@ Vorab wurden Tests aufgrund Daten von Mastodon durchgeführt, sowie mit der Plat
 Umgesetzt sind alle Funktionalitäten basierend auf den jeweiligen öffentlich zugänglichen API's, die Code-Erstellung wurde unterstützt von ChatGPT bzw. CoPilot in VS Code.
 
 Newdata.io Update vom 15.12.23:
+Die folgenden Änderungen werden die Funktionalität meines Codes beeinflussen:
+
 Effective from January 15, 2024, the following adjustments will be made to the free plan:
 
 - Latest News Delay: Latest news updates will be delayed by 12 hours for free plan users
