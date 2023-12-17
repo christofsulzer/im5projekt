@@ -18,6 +18,9 @@ Umgesetzt sind alle Funktionalitäten basierend auf den jeweiligen öffentlich z
 
 Newdata.io Update vom 15.12.23:
 Effective from January 15, 2024, the following adjustments will be made to the free plan:
-Latest News Delay: Latest news updates will be delayed by 12 hours for free plan users.
-Content and Image URLs: Full content and image URLs will no longer be included in the response results for free plan users.
-Timeframe Parameter: The "timeframe" parameter will be removed from the free plan.
+
+- Latest News Delay: Latest news updates will be delayed by 12 hours for free plan users
+- Content and Image URLs: Full content and image URLs will no longer be included in the response results for free plan users
+- Timeframe Parameter: The "timeframe" parameter will be removed from the free plan.
+
+  
